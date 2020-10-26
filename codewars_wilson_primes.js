@@ -6,6 +6,13 @@ Then ((P-1)! + 1) / (P * P) should give a whole number.
 Your task is to create a function that returns true if the given number is a Wilson prime.
 */
 
-function amIWilson(p) {
-  // check if prime is Wilson
+const amIWilson = (p) => {
+  let isPrime = true;
+  for(let i = 2; i < (p / 2); i++) {
+    if(p % i === 0) {
+      isPrime = false;
+      break;
+    }
+  }
+  return isPrime;
 }
